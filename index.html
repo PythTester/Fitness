@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitness Tracker - Multi Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="main-header">
+        <h1>Family Fitness Tracker 🏋️</h1>
+        <button id="toggle-dark" class="dark-btn">🌙 Dark Mode</button>
+      </header>
+      
+
+    <main>
+      <section id="auth-section" class="auth-section">
+        <div id="signup-form" class="auth-card">
+          <h2>Create Account</h2>
+          <input type="text" id="signup-username" placeholder="Username" />
+          <input type="password" id="signup-password" placeholder="Password" />
+          <input type="file" id="signup-avatar" />
+          <button id="signup-btn">Sign Up</button>
+          <p>Already have an account? <span id="show-login">Login</span></p>
+          <p id="signup-error" class="error"></p>
+        </div>
+
+        <div id="login-form" class="auth-card" style="display:none;">
+          <h2>Sign In</h2>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button id="login-btn">Login</button>
+          <p>Don't have an account? <span id="show-signup">Sign Up</span></p>
+          <p id="login-error" class="error"></p>
+        </div>
+      </section>
+
+      <section id="dashboard" style="display:none;">
+        <div class="dashboard-header">
+          <div class="user-info">
+            <img id="user-avatar" src="" alt="Profile Picture" />
+            <h2>Welcome, <span id="user-name"></span></h2>
+          </div>
+          <button id="logout-btn" class="logout-btn">Logout</button>
+        </div>
+
+        <div class="dashboard-content">
+          <section class="profiles-section card">
+            <h3>Your Profiles</h3>
+            <div id="profiles-list" class="profiles-list"></div>
+            <div class="profile-form">
+              
+              <input type="text" id="profile-name" placeholder="Profile Name" />
+              <input type="file" id="profile-avatar" />
+              <button id="add-profile-btn">Add Profile</button>
+              <p id="profile-error" class="error"></p>
+            </div>
+          </section>
+
+          
+          
+
+          <section class="goals-section card">
+            <h3>Workout Goals</h3>
+            <div id="workout-form">
+              <select id="profile-selector"></select>
+              <input type="text" id="goal-title" placeholder="Goal Title" />
+              <select id="goal-type">
+                <option value="time">Minutes</option>
+                <option value="reps">Repetitions</option>
+              </select>
+              <input type="number" id="goal-amount" placeholder="Target Amount" />
+              <input type="month" id="goal-month" />
+              <button id="add-goal-btn">Add Goal</button>
+              <p id="goal-error" class="error"></p>
+            </div>
+          
+            <h4>View Goals by Profile</h4>
+            <select id="view-profile-selector" class="profile-view-selector"></select>
+            <div id="goals-list"></div>
+          </section>
+
+          <section class="stats-section card">
+            <h3>📊 Monthly Summary</h3>
+            <select id="summary-profile-selector" class="profile-view-selector">
+              <option value="all">All Profiles</option>
+            </select>
+            <div id="summary-stats">
+              <p>Total Profiles: <strong id="stat-profiles">0</strong></p>
+              <p>Total Goals: <strong id="stat-goals">0</strong></p>
+              <p>Overall Completion: <strong id="stat-completion">0%</strong></p>
+              <p>Longest Active Streak: <strong id="stat-streak">0 days</strong></p>
+            </div>
+          </section>
+          
+          
+    </main>
+  </div>
+
+  <input type="file" id="change-avatar" style="display:none;" />
+  <script src="app.js"></script>
+</body>
+</html>
