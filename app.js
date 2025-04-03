@@ -462,4 +462,3 @@ summaryProfileSelector.value = 'all';
       document.body.classList.add('dark-mode');
     }
   };
-  
