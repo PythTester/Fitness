@@ -59,14 +59,19 @@
             </div>
           </section>
 
-          
-          
-
           <section class="goals-section card">
             <h3>Workout Goals</h3>
             <div id="workout-form">
               <select id="profile-selector"></select>
-              <input type="text" id="goal-title" placeholder="Goal Title" />
+              <select id="goal-category">
+                <option value="">Select Workout</option>
+                <option value="Sit-ups">Sit-ups</option>
+                <option value="Push-ups">Push-ups</option>
+                <option value="Wall Squats">Wall Squats</option>
+                <option value="Soccer Training">Soccer Training</option>
+                <option value="Running">Running</option>
+                <option value="Jump Rope">Jump Rope</option>
+              </select>
               <select id="goal-type">
                 <option value="time">Minutes</option>
                 <option value="reps">Repetitions</option>
@@ -81,6 +86,7 @@
             <select id="view-profile-selector" class="profile-view-selector"></select>
             <div id="goals-list"></div>
           </section>
+          
 
           <section class="stats-section card">
             <h3>📊 Monthly Summary</h3>
