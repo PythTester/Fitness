@@ -479,4 +479,106 @@
       font-size: 1rem;
     }
   }
+  /* =========================
+    🎯 Modern Dropdowns
+=========================== */
+.profile-view-selector,
+.goal-section select,
+#profile-selector,
+#goal-type,
+#summary-profile-selector,
+#goal-category {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: var(--card-color);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 40px 10px 15px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .profile-view-selector,
+body.dark-mode .goal-section select,
+body.dark-mode #profile-selector,
+body.dark-mode #goal-type,
+body.dark-mode #summary-profile-selector,
+body.dark-mode #goal-category {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23f1f1f1" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  border-color: #555;
+}
+
+
+.profile-view-selector:hover,
+.goal-section select:hover,
+#profile-selector:hover,
+#goal-type:hover,
+#summary-profile-selector:hover {
+  border-color: var(--button-bg);
+}
+
+.profile-view-selector:focus,
+.goal-section select:focus,
+#profile-selector:focus,
+#goal-type:focus,
+#summary-profile-selector:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+#add-goal-btn {
+    background: var(--progress-bg);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    width: 8%;
+    transition: background 0.3s ease;
+  }
   
+  #add-goal-btn:hover {
+    background: #059669;
+  }
+  /* 🎯 Workout Goals - Modern Inputs */
+#goal-amount,
+#goal-month {
+  margin-top: 10px;
+  padding: 12px 15px;
+  width: 15%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: var(--card-color);
+  backdrop-filter: var(--glass-blur);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Hover & Focus effect */
+#goal-amount:hover,
+#goal-month:hover {
+  border-color: var(--button-bg);
+}
+
+#goal-amount:focus,
+#goal-month:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* Dark Mode */
+body.dark-mode #goal-amount,
+body.dark-mode #goal-month {
+  border-color: #555;
+}
