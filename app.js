@@ -61,6 +61,7 @@ function hashPassword(password) {
   const statCompletion = document.getElementById('stat-completion');
   const statStreak = document.getElementById('stat-streak');
   const summaryProfileSelector = document.getElementById('summary-profile-selector');
+  const goalCategory = document.getElementById('goal-category');
 
   const SESSION_KEY = 'fitness_session';
   
@@ -293,7 +294,7 @@ summaryProfileSelector.value = 'all';
   
   // ====== Goal Functions ======
   function handleAddGoal() {
-    const title = goalTitle.value.trim();
+    const category = goalCategory.value;
     const type = goalType.value;
     const amount = parseInt(goalAmount.value);
     const month = goalMonth.value;
@@ -302,12 +303,14 @@ summaryProfileSelector.value = 'all';
     const session = JSON.parse(sessionStorage.getItem(SESSION_KEY));
     let user = users.find(u => u.username === session.username);
   
-    if (!title || !amount || !month || !profileId) {
+    if (!category || !amount || !month || !profileId) {
       goalError.textContent = 'Please fill all fields';
       return;
     }
   
     const profile = user.profiles.find(p => p.profileId === profileId);
+    const title = `${amount} ${type === 'time' ? 'minutes' : 'reps'} of ${category}`;
+  
     profile.goals.push({
       id: Date.now(),
       title,
@@ -322,11 +325,12 @@ summaryProfileSelector.value = 'all';
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(user));
     renderGoals(user);
   
-    goalTitle.value = '';
+    goalCategory.value = '';
     goalAmount.value = '';
     goalMonth.value = '';
     goalError.textContent = '';
   }
+  
   
   function renderGoals(user) {
     goalsList.innerHTML = '';
