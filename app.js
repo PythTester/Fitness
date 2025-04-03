@@ -61,7 +61,7 @@ function hashPassword(password) {
   const statCompletion = document.getElementById('stat-completion');
   const statStreak = document.getElementById('stat-streak');
   const summaryProfileSelector = document.getElementById('summary-profile-selector');
-  const goalCategory = document.getElementById('goal-category');
+
 
   const SESSION_KEY = 'fitness_session';
   
@@ -294,6 +294,7 @@ summaryProfileSelector.value = 'all';
   
   // ====== Goal Functions ======
   function handleAddGoal() {
+    const goalCategory = document.getElementById('goal-category');
     const category = goalCategory.value;
     const type = goalType.value;
     const amount = parseInt(goalAmount.value);
